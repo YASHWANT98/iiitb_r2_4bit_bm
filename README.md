@@ -32,6 +32,6 @@ The  multiplication operation through Booth’s algorithm is efficient compared 
 
 ![](images/Flowchart_crop.jpg)
 
-The figure 1 shows the flowchart of Booth’s Algorithm. At every clock cycle the two bits (Q0, Q-1)  are inspected for determination of operation .The Q0 refers to Q[0]. If the (Q, Q-1) are same (1,1) 0r (0,0) then only right shift operation is performed. If the (Q0, Q-1) are same (1,0) then subtraction (A-M) followed by right shift is performed. If the (Q0, Q-1) are same (0,1) then addition (A+M) followed by right shift operation is performed. This cycle is repeated as many times as the specified bits of Booth’s Multiplier is given. This selectivity in performing addition /subtraction operation enables it to produce result efficiently. 
+The figure 1 shows the flowchart of Booth’s Algorithm. At every clock cycle the two bits (Q<sub>0</sub> , Q<sub>-1</sub>)  are inspected for determination of operation .The Q<sub>0</sub>  refers to Q[0]. If the (Q<sub>0</sub> , Q<sub>-1</sub>) are same (1,1) 0r (0,0) then only right shift operation is performed. If the (Q<sub>0</sub> , Q<sub>-1</sub>) are same (1,0) then subtraction (A-M) followed by right shift is performed. If the (Q<sub>0</sub> , Q<sub>-1</sub>) are same (0,1) then addition (A+M) followed by right shift operation is performed. This cycle is repeated as many times as the specified bits of Booth’s Multiplier is given. This selectivity in performing addition /subtraction operation enables it to produce result efficiently. 
 
  
