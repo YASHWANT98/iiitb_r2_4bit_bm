@@ -36,7 +36,6 @@ The above figure shows the flowchart of Booth’s Algorithm. At every clock cycl
 
 ## RTL Simulation
 
-![](images/Waveform_new.jpg)
 
 The above figure shows the simulated wavefrom of the Radix-2 4-Bit Booth's Multiplier.
 
