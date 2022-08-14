@@ -40,7 +40,7 @@ The above figure shows the flowchart of Booth’s Algorithm. At every clock cycl
 
 The above figure shows the simulated wavefrom of the Radix-2 4-Bit Booth's Multiplier.
 
-* The Multiplier is Q = 1011 which is in 2's complement form and is signed decimal = -5. 
+* The Multiplier is Q = 1011 which is in 2's complement form and in signed decimal form = -5. 
 * Similarly Multiplicand M = 1010, signed decimal = -6. 
 * Product is P = 00011110, signed decimal = 30. 
 
