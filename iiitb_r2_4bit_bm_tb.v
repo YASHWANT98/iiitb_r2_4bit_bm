@@ -1,5 +1,3 @@
-  'timescale 1ns / 1ps
-
 module iiitb_r2_4bit_bm_tb;
 
 	// Inputs
