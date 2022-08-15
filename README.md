@@ -44,4 +44,16 @@ The above figure shows the simulated wavefrom of the Radix-2 4-Bit Booth's Multi
 * Similarly Multiplicand M = 1010, signed decimal = -6. 
 * Product is P = 00011110, signed decimal = 30. 
 
+ ## Contributors 
  
+ * Yashwant Moses, MS IIIT Bangalore
+ * Kunal Ghosh, Director, VSD Corp. Pvt. Ltd.
+ 
+ ## Acknowledgement 
+ 
+ * Kunal Ghosh, Director, VSD Corp. Pvt. Ltd.
+ 
+ ## Contact 
+ 
+ * Kunal Ghosh, Director, VSD Corp. Pvt. Ltd. kunalghosh@gmail.com
+ * Yashwant Moses, MS IIIT Bangalore. yashwantmoses123@gmail.com
