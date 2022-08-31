@@ -72,6 +72,116 @@ The above figure shows the Gate Level simulated wavefrom of the Radix-2 4-Bit Bo
 * Multiplicand M =   1010, signed decimal = -6. 
 * Product  is  P = 00011110, signed decimal = 30. 
 
+## Physical Design
+
+### Preperation
+
+The Physical Design is performed using the OpenLane flow. In order to accomplish it certian preparation has to be done . Copy the `config.json` to the `Openlane/designs/iiitb_r2_4bit_bm` directory. Also copy the `iiitb_r2_4bit_bm.v` , `sky130_vsdinv.lef` , `sky130_fd_sc_hd_fast.lib` , `sky130_fd_sc_hd_slow.lib` and `sky130_fd_sc_hd_typical.lib`  in `Openlane/designs/iiitb_r2_4bit_bm/src`. The contents of the `config.json` file are  
+
+```
+{
+    "DESIGN_NAME": "iiitb_r2_4bit_bm",
+    "VERILOG_FILES": "dir::src/iiitb_r2_4bit_bm.v",
+    "CLOCK_PORT": "clk",
+    "CLOCK_NET": "clk",
+    "GLB_RESIZER_TIMING_OPTIMIZATIONS": true,
+    "CLOCK_PERIOD": 10,
+    "PL_TARGET_DENSITY": 0.7,
+    "FP_SIZING" : "relative",
+    "pdk::sky130*": {
+        "FP_CORE_UTIL": 40,
+        "scl::sky130_fd_sc_hd": {
+            "FP_CORE_UTIL": 30
+        }
+    },
+    
+    "LIB_SYNTH": "dir::src/sky130_fd_sc_hd__typical.lib",
+    "LIB_FASTEST": "dir::src/sky130_fd_sc_hd__fast.lib",
+    "LIB_SLOWEST": "dir::src/sky130_fd_sc_hd__slow.lib",
+    "LIB_TYPICAL": "dir::src/sky130_fd_sc_hd__typical.lib",  
+    "TEST_EXTERNAL_GLOB": "dir::../iiitb_r2_4bit_bm/src/*"
+
+}
+```
+
+Now, open the terminal in the OpenLane directory, and type the following commands to invoke it
+
+```
+make mount
+```
+Now to run the OpenLane flow in the interactive mode enter the command
+
+```
+./flow.tcl -interactive
+```
+Now to proceed to import the design for the physical design under the desired tag
+
+```
+prep -design iiitb_r2_4bit_bm -tag ASIC
+```
+
+Now to merge the sky130_vsdinv lef file to the merged.nom.lef enter the following commands one after the other 
+
+```
+set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+add_lefs -src $lefs
+```
+!
+
+### Synthesis 
+
+The synthesis in the OpenLane flow is carried out by `yosys` . After that the technology mapping is carried out by the `abc`. After that an static timing analysis (STA) is carried out by the `OpenSTA`.
+
+To run synthesis enter the command 
+
+```
+run_synthesis
+```
+!
+
+#### The Synthesis report 
+
+The statistic regarding the skywater130 cells which are mapped on to the design.
+!
+```
+Flop Ratio = Ratio of total number of flip flops / Total number of cells present in the design = 24/112 = 0.2143
+```
+STA report 
+!
+
+IF the macro sky130_vsdinv is synthesised on the design then the sky130_vsdinv will be reflected on the sythesised netlist.
+!
+
+### Floorplan 
+
+`init_fp`  - Defines the core area for the macro as well as the rows (used for placement) and the tracks (used for routing)
+`ioplacer` - Places the macro input and output ports
+`pdn`      - Generates the power distribution network
+`tapcell`  - Inserts welltap and decap cells in the floorplan
+
+To proceed with floorplan enter the command 
+
+```
+run_floorplan 
+```
+!
+
+Core Area
+!
+Die Area
+!
+
+#### Floorplan View
+
+To view the floorplan in `magic` navigate to the directory `OpenLane/designs/iiitb_r2_4bit_bm/run/ASIC/result/floorplan` and then enter the commands
+
+```
+magic -T /home/yashm98/openlane_dir/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech ../../tmp/merged.nom.lef def read iiitb_r2_4bit_bm.def &
+```
+!
+
+### Placement
+
  ## Contributors 
  
  * Yashwant Moses, MS IIIT Bangalore
