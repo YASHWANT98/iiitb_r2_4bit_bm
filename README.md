@@ -126,7 +126,11 @@ Now to merge the sky130_vsdinv lef file to the merged.nom.lef enter the followin
 set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
 add_lefs -src $lefs
 ```
-!
+![](images/prep_cmd.png)
+
+The file `merged.nom.lef` should contain the sky130_vsdinv macro
+
+![](images/merged_non_lef.png)
 
 ### Synthesis 
 
@@ -137,20 +141,20 @@ To run synthesis enter the command
 ```
 run_synthesis
 ```
-!
+![](images/synthesis_cmd.png)
 
 #### The Synthesis report 
 
 The statistic regarding the skywater130 cells which are mapped on to the design.
-!
+
+![](images/syntheisis_report.png)
+
 ```
 Flop Ratio = Ratio of total number of flip flops / Total number of cells present in the design = 24/112 = 0.2143
 ```
-STA report 
-!
 
 IF the macro sky130_vsdinv is synthesised on the design then the sky130_vsdinv will be reflected on the sythesised netlist.
-!
+![](images/Post_synth_macro.png)
 
 ### Floorplan 
 
@@ -161,13 +165,15 @@ To proceed with floorplan enter the command
 ```
 run_floorplan 
 ```
-!
+![](images/floorplan_cmd.png)
 
 Core Area
-!
+
+![](images/foorplan_core_area.png)
 
 Die Area
-!
+
+![](images/floorplan_die_area.png)
 
 #### Floorplan View
 
@@ -177,7 +183,7 @@ To view the floorplan in `magic` navigate to the directory `OpenLane/designs/iii
 magic -T /home/yashm98/openlane_dir/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech ../../tmp/merged.nom.lef def read iiitb_r2_4bit_bm.def &
 ```
 
-!
+![](images/Floorplan_magic.png)
 
 ### Placement
 
