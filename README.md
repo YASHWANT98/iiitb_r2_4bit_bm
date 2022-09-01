@@ -252,9 +252,13 @@ The sky130_vsdinv will be present in the netlist and .def file after placement
 
 ![](images/post_layout_netlist_macro.png)
 
-Complete layout 
+Complete layout in magic
 
 ![](images/Routing_magic.png)
+
+Complete layout in Klayout
+
+![](images/Klayout.png)
 
 sky130_vsdinv in Layout view
 
