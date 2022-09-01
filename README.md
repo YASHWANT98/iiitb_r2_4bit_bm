@@ -248,9 +248,9 @@ magic -T /home/yashm98/openlane_dir/OpenLane/pdks/sky130A/libs.tech/magic/sky130
 
 The sky130_vsdinv will be present in the netlist and .def file after placement 
 
-![](post_layout_def_macro.png)   
+![](images/post_layout_def_macro.png)   
 
-![](post_layout_netlist_macro.png)
+![](images/post_layout_netlist_macro.png)
 
 Complete layout 
 
