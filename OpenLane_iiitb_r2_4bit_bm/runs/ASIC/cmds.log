@@ -1,0 +1,100 @@
+Tue Aug 30 08:07:27 UTC 2022 - Executing "openroad -python /openlane/scripts/odbpy/lefutil.py get_metal_layers -o /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/tmp/layers.list /home/yashm98/openlane_dir/OpenLane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef"
+
+Tue Aug 30 08:07:28 UTC 2022 - Executing "/openlane/scripts/mergeLef.py -o /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/tmp/merged.nom.lef -i /home/yashm98/openlane_dir/OpenLane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef {/home/yashm98/openlane_dir/OpenLane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef /home/yashm98/openlane_dir/OpenLane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef} |& tee /dev/null"
+
+Tue Aug 30 08:07:29 UTC 2022 - Executing "/openlane/scripts/mergeLef.py -o /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/tmp/merged.min.lef -i /home/yashm98/openlane_dir/OpenLane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__min.tlef {/home/yashm98/openlane_dir/OpenLane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef /home/yashm98/openlane_dir/OpenLane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef} |& tee /dev/null"
+
+Tue Aug 30 08:07:29 UTC 2022 - Executing "/openlane/scripts/mergeLef.py -o /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/tmp/merged.max.lef -i /home/yashm98/openlane_dir/OpenLane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__max.tlef {/home/yashm98/openlane_dir/OpenLane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef /home/yashm98/openlane_dir/OpenLane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef} |& tee /dev/null"
+
+Tue Aug 30 08:07:29 UTC 2022 - Executing "openroad -python /openlane/scripts/mergeLib.py --output /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/tmp/synthesis/merged.lib --name sky130A_merged /openlane/designs/iiitb_r2_4bit_bm/src/sky130_fd_sc_hd__typical.lib"
+
+Tue Aug 30 08:07:31 UTC 2022 - Executing "openroad -python /openlane/scripts/libtrim.py --cell-file /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/tmp/synthesis/trimmed.lib.exclude.list --output /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/tmp/synthesis/trimmed.lib /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/tmp/synthesis/merged.lib"
+
+Tue Aug 30 08:07:32 UTC 2022 - Executing "openroad -python /openlane/scripts/new_tracks.py -i /home/yashm98/openlane_dir/OpenLane/pdks/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tracks.info -o /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/tmp/routing/config.tracks"
+
+Tue Aug 30 08:07:33 UTC 2022 - Executing "echo {openlane 6ab944bc23688cae6dc6fa32444891a1e57715c8} > /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/OPENLANE_VERSION"
+
+Tue Aug 30 08:10:29 UTC 2022 - Executing "/openlane/scripts/mergeLef.py -i /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/tmp/merged.nom.lef /openlane/designs/iiitb_r2_4bit_bm/src/sky130_vsdinv.lef -o /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/tmp/merged.nom.lef.new"
+
+Tue Aug 30 08:10:29 UTC 2022 - Executing "mv /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/tmp/merged.nom.lef.new /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/tmp/merged.nom.lef"
+
+Tue Aug 30 08:13:06 UTC 2022 - Executing "sed -E {s/^([[:space:]]+)pg_pin(.*)/\1pin\2\n\1    direction : "inout";/g} /openlane/designs/iiitb_r2_4bit_bm/src/sky130_fd_sc_hd__typical.lib > /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/tmp/synthesis/1-sky130_fd_sc_hd__typical.no_pg.lib"
+
+Tue Aug 30 08:13:06 UTC 2022 - Executing "sed -E {s/^([[:space:]]+)pg_pin(.*)/\1pin\2\n\1    direction : "inout";/g} /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/tmp/synthesis/trimmed.lib > /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/tmp/synthesis/1-trimmed.no_pg.lib"
+
+Tue Aug 30 08:13:06 UTC 2022 - Executing "yosys -c /openlane/scripts/yosys/synth.tcl -l /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/logs/synthesis/1-synthesis.log |& tee /dev/null"
+
+Tue Aug 30 08:13:09 UTC 2022 - Executing "sed -i -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openlane\/designs\/iiitb_r2_4bit_bm\/runs\/ASIC\/results\/synthesis\/iiitb_r2_4bit_bm.v/} /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/config.tcl"
+
+Tue Aug 30 08:13:09 UTC 2022 - Executing "sed -i -e {s/\(set ::env(PREV_NETLIST)\).*/\1 0/} /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/config.tcl"
+
+Tue Aug 30 08:13:09 UTC 2022 - Executing "sed -i /defparam/d /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/results/synthesis/iiitb_r2_4bit_bm.v"
+
+Tue Aug 30 08:13:09 UTC 2022 - Executing "openroad -exit /openlane/scripts/openroad/sta.tcl |& tee /dev/null /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/logs/synthesis/2-sta.log"
+
+Tue Aug 30 08:21:32 UTC 2022 - Executing "openroad -exit /openlane/scripts/openroad/floorplan.tcl |& tee /dev/null /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/logs/floorplan/3-initial_fp.log"
+
+Tue Aug 30 08:21:34 UTC 2022 - Executing "openroad -python /openlane/scripts/odbpy/snap_to_grid.py --output /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/tmp/floorplan/3-minimized_pdn.txt --input-lef /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/tmp/merged.nom.lef 7.9925 7.819999999999999 15.985 15.639999999999999"
+
+Tue Aug 30 08:21:35 UTC 2022 - Executing "openroad -python /openlane/scripts/odbpy/defutil.py extract_core_dims --output-data /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/tmp/dimensions.txt --input-lef /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/tmp/merged.nom.lef /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/tmp/floorplan/3-initial_fp.def"
+
+Tue Aug 30 08:21:36 UTC 2022 - Executing "openroad -exit /openlane/scripts/openroad/ioplacer.tcl |& tee /dev/null /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/logs/floorplan/4-io.log"
+
+Tue Aug 30 08:21:37 UTC 2022 - Executing "openroad -exit /openlane/scripts/openroad/tapcell.tcl |& tee /dev/null /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/logs/floorplan/5-tap.log"
+
+Tue Aug 30 08:21:38 UTC 2022 - Executing "openroad -exit /openlane/scripts/openroad/pdn.tcl |& tee /dev/null /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/logs/floorplan/6-pdn.log"
+
+Tue Aug 30 08:31:27 UTC 2022 - Executing "openroad -exit /openlane/scripts/openroad/gpl.tcl |& tee /dev/null /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/logs/placement/7-global.log"
+
+Tue Aug 30 08:31:30 UTC 2022 - Executing "openroad -exit /openlane/scripts/openroad/resizer.tcl |& tee /dev/null /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/logs/placement/8-resizer.log"
+
+Tue Aug 30 08:31:32 UTC 2022 - Executing "openroad -exit /openlane/scripts/openroad/write_verilog.tcl |& tee /dev/null /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/logs/placement/9-write_verilog.log"
+
+Tue Aug 30 08:31:33 UTC 2022 - Executing "sed -i -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openlane\/designs\/iiitb_r2_4bit_bm\/runs\/ASIC\/results\/placement\/iiitb_r2_4bit_bm.resized.v/} /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/config.tcl"
+
+Tue Aug 30 08:31:33 UTC 2022 - Executing "sed -i -e {s/\(set ::env(PREV_NETLIST)\).*/\1 \/openlane\/designs\/iiitb_r2_4bit_bm\/runs\/ASIC\/results\/synthesis\/iiitb_r2_4bit_bm.v/} /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/config.tcl"
+
+Tue Aug 30 08:31:33 UTC 2022 - Executing "openroad -python /openlane/scripts/odbpy/remove_buffers.py --output /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/tmp/placement/8-resizer.buffers_removed.def --input-lef /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/tmp/merged.nom.lef --ports {} /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/tmp/placement/8-resizer.def |& tee /dev/null /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/logs/placement/10-remove_buffers_from_ports.log"
+
+Tue Aug 30 08:31:35 UTC 2022 - Executing "openroad -exit /openlane/scripts/openroad/dpl.tcl |& tee /dev/null /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/logs/placement/11-detailed.log"
+
+Tue Aug 30 09:23:40 UTC 2022 - Executing "openroad -python /openlane/scripts/libtrim.py --cell-file /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/tmp/cts/cts.lib.exclude.list --output /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/tmp/cts/cts.lib /openlane/designs/iiitb_r2_4bit_bm/src/sky130_fd_sc_hd__typical.lib"
+
+Tue Aug 30 09:23:41 UTC 2022 - Executing "openroad -exit /openlane/scripts/openroad/cts.tcl |& tee /dev/null /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/logs/cts/12-cts.log"
+
+Tue Aug 30 09:25:27 UTC 2022 - Executing "openroad -exit /openlane/scripts/openroad/write_verilog.tcl |& tee /dev/null /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/logs/cts/13-write_verilog.log"
+
+Tue Aug 30 09:25:28 UTC 2022 - Executing "sed -i -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openlane\/designs\/iiitb_r2_4bit_bm\/runs\/ASIC\/results\/cts\/iiitb_r2_4bit_bm.v/} /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/config.tcl"
+
+Tue Aug 30 09:25:28 UTC 2022 - Executing "sed -i -e {s/\(set ::env(PREV_NETLIST)\).*/\1 \/openlane\/designs\/iiitb_r2_4bit_bm\/runs\/ASIC\/results\/placement\/iiitb_r2_4bit_bm.resized.v/} /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/config.tcl"
+
+Tue Aug 30 09:25:45 UTC 2022 - Executing "openroad -exit /openlane/scripts/openroad/resizer_routing_timing.tcl |& tee /dev/null /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/logs/routing/14-resizer.log"
+
+Tue Aug 30 09:25:47 UTC 2022 - Executing "openroad -exit /openlane/scripts/openroad/write_verilog.tcl |& tee /dev/null /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/logs/routing/15-write_verilog.log"
+
+Tue Aug 30 09:25:48 UTC 2022 - Executing "sed -i -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openlane\/designs\/iiitb_r2_4bit_bm\/runs\/ASIC\/results\/routing\/iiitb_r2_4bit_bm.resized.v/} /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/config.tcl"
+
+Tue Aug 30 09:25:48 UTC 2022 - Executing "sed -i -e {s/\(set ::env(PREV_NETLIST)\).*/\1 \/openlane\/designs\/iiitb_r2_4bit_bm\/runs\/ASIC\/results\/cts\/iiitb_r2_4bit_bm.v/} /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/config.tcl"
+
+Tue Aug 30 09:25:48 UTC 2022 - Executing "openroad -exit /openlane/scripts/openroad/dpl.tcl |& tee /dev/null /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/logs/routing/16-diode_legalization.log"
+
+Tue Aug 30 09:25:50 UTC 2022 - Executing "openroad -exit /openlane/scripts/openroad/groute.tcl |& tee /dev/null /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/logs/routing/17-global.log"
+
+Tue Aug 30 09:25:52 UTC 2022 - Executing "openroad -exit /openlane/scripts/openroad/fill.tcl |& tee /dev/null /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/logs/routing/18-fill.log"
+
+Tue Aug 30 09:25:53 UTC 2022 - Executing "openroad -exit /openlane/scripts/openroad/write_verilog.tcl |& tee /dev/null /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/logs/routing/19-write_verilog_global.log"
+
+Tue Aug 30 09:25:54 UTC 2022 - Executing "sed -i -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openlane\/designs\/iiitb_r2_4bit_bm\/runs\/ASIC\/tmp\/routing\/18-global.v/} /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/config.tcl"
+
+Tue Aug 30 09:25:54 UTC 2022 - Executing "sed -i -e {s/\(set ::env(PREV_NETLIST)\).*/\1 \/openlane\/designs\/iiitb_r2_4bit_bm\/runs\/ASIC\/results\/routing\/iiitb_r2_4bit_bm.resized.v/} /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/config.tcl"
+
+Tue Aug 30 09:25:54 UTC 2022 - Executing "openroad -exit /openlane/scripts/openroad/droute.tcl |& tee /dev/null /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/logs/routing/20-detailed.log"
+
+Tue Aug 30 09:26:14 UTC 2022 - Executing "openroad -python /openlane/scripts/drc_rosetta.py tr to_klayout -o /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/reports/routing/drt.klayout.xml --design-name iiitb_r2_4bit_bm /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/reports/routing/drt.drc"
+
+Tue Aug 30 09:26:15 UTC 2022 - Executing "openroad -exit /openlane/scripts/openroad/write_verilog.tcl |& tee /dev/null /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/logs/routing/21-write_verilog_detailed.log"
+
+Tue Aug 30 09:26:16 UTC 2022 - Executing "sed -i -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openlane\/designs\/iiitb_r2_4bit_bm\/runs\/ASIC\/tmp\/routing\/20-detailed.v/} /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/config.tcl"
+
+Tue Aug 30 09:26:16 UTC 2022 - Executing "sed -i -e {s/\(set ::env(PREV_NETLIST)\).*/\1 \/openlane\/designs\/iiitb_r2_4bit_bm\/runs\/ASIC\/tmp\/routing\/18-global.v/} /openlane/designs/iiitb_r2_4bit_bm/runs/ASIC/config.tcl"
+

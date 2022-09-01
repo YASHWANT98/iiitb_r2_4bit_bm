@@ -1,0 +1,25 @@
+
+16. Printing statistics.
+
+=== iiitb_r2_4bit_bm ===
+
+   Number of wires:                125
+   Number of wire bits:            161
+   Number of public wires:          11
+   Number of public wire bits:      35
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                146
+     $_ANDNOT_                      26
+     $_AND_                          1
+     $_MUX_                         54
+     $_NAND_                         3
+     $_NOR_                          2
+     $_NOT_                         17
+     $_ORNOT_                        3
+     $_OR_                           2
+     $_XNOR_                         4
+     $_XOR_                         10
+     sky130_fd_sc_hd__dfxtp_2       24
+

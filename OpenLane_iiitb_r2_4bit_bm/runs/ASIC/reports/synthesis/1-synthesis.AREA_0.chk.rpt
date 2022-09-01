@@ -1,0 +1,12 @@
+
+23. Executing CHECK pass (checking for obvious problems).
+Checking module iiitb_r2_4bit_bm...
+Warning: Wire iiitb_r2_4bit_bm.\P [7] is used but has no driver.
+Warning: Wire iiitb_r2_4bit_bm.\P [6] is used but has no driver.
+Warning: Wire iiitb_r2_4bit_bm.\P [5] is used but has no driver.
+Warning: Wire iiitb_r2_4bit_bm.\P [4] is used but has no driver.
+Warning: Wire iiitb_r2_4bit_bm.\P [3] is used but has no driver.
+Warning: Wire iiitb_r2_4bit_bm.\P [2] is used but has no driver.
+Warning: Wire iiitb_r2_4bit_bm.\P [1] is used but has no driver.
+Warning: Wire iiitb_r2_4bit_bm.\P [0] is used but has no driver.
+Found and reported 8 problems.
