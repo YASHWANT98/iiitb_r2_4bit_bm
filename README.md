@@ -153,7 +153,8 @@ The statistic regarding the skywater130 cells which are mapped on to the design.
 Flop Ratio = Ratio of total number of flip flops / Total number of cells present in the design = 24/112 = 0.2143
 ```
 
-IF the macro sky130_vsdinv is synthesised on the design then the sky130_vsdinv will be reflected on the sythesised netlist.
+If the macro sky130_vsdinv is synthesised on the design then the sky130_vsdinv will be reflected on the sythesised netlist.
+
 ![](images/Post_synth_macro.png)
 
 ### Floorplan 
