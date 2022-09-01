@@ -154,10 +154,7 @@ IF the macro sky130_vsdinv is synthesised on the design then the sky130_vsdinv w
 
 ### Floorplan 
 
-`init_fp`  - Defines the core area for the macro as well as the rows (used for placement) and the tracks (used for routing)
-`ioplacer` - Places the macro input and output ports
-`pdn`      - Generates the power distribution network
-`tapcell`  - Inserts welltap and decap cells in the floorplan
+The floorplan conssist of various process such as determining the core area for macro, rows and tracks , I/O placement, power distribution network generation and inserting welltap ,and decap cells. 
 
 To proceed with floorplan enter the command 
 
@@ -168,6 +165,7 @@ run_floorplan
 
 Core Area
 !
+
 Die Area
 !
 
@@ -178,9 +176,71 @@ To view the floorplan in `magic` navigate to the directory `OpenLane/designs/iii
 ```
 magic -T /home/yashm98/openlane_dir/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech ../../tmp/merged.nom.lef def read iiitb_r2_4bit_bm.def &
 ```
+
 !
 
 ### Placement
+
+In placement the flow performs the global placement of cells followed by the detailed placement.
+
+To proceeed with placement enter the command
+
+```
+run_placement
+```
+!
+
+#### Placement View
+
+To view the placement in `magic` navigate to the directory `OpenLane/designs/iiitb_r2_4bit_bm/run/ASIC/result/placement` and then enter the commands
+
+```
+magic -T /home/yashm98/openlane_dir/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech ../../tmp/merged.nom.lef def read iiitb_r2_4bit_bm.def &
+```
+
+The sky130_vsdinv will be present in the netlist and .def file after placement 
+
+!!
+
+Placement View
+
+!
+
+sky130_vsdinv in placement view
+
+!
+
+### Clock Tree Synthesis (CTS)
+
+The process involves the synthesis of clock tree distribution
+
+To proceeed with CTS , enter the command 
+
+```
+run_cts
+```
+!
+
+### Routing 
+
+The process involves global routing and detailed routing followed by parasitic (SPEF) extraction 
+
+To proceed with routing , enter the command 
+
+```
+run_routing
+```
+!
+
+#### Complete layout View
+
+To view the routing in `magic` navigate to the directory `OpenLane/designs/iiitb_r2_4bit_bm/run/ASIC/result/routing` and then enter the commands
+
+```
+magic -T /home/yashm98/openlane_dir/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech ../../tmp/merged.nom.lef def read iiitb_r2_4bit_bm.def &
+```
+
+
 
  ## Contributors 
  
