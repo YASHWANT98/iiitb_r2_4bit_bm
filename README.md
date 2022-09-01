@@ -194,7 +194,7 @@ To proceeed with placement enter the command
 ```
 run_placement
 ```
-!
+![](images/placement_cmd.png)
 
 #### Placement View
 
@@ -206,15 +206,15 @@ magic -T /home/yashm98/openlane_dir/OpenLane/pdks/sky130A/libs.tech/magic/sky130
 
 The sky130_vsdinv will be present in the netlist and .def file after placement 
 
-!!
+![](images/post_placement_def_macro.png)  ![](images/post_placement_netlist_macro.png)
 
 Placement View
 
-!
+![](images/placement_magic.png)
 
 sky130_vsdinv in placement view
 
-!
+![](images/post_routing_sky130inv.png)
 
 ### Clock Tree Synthesis (CTS)
 
@@ -225,7 +225,7 @@ To proceeed with CTS , enter the command
 ```
 run_cts
 ```
-!
+![](images/cts_cmd.png)
 
 ### Routing 
 
@@ -236,7 +236,7 @@ To proceed with routing , enter the command
 ```
 run_routing
 ```
-!
+![](images/routing_cmd.png)
 
 #### Complete layout View
 
@@ -246,7 +246,23 @@ To view the routing in `magic` navigate to the directory `OpenLane/designs/iiitb
 magic -T /home/yashm98/openlane_dir/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech ../../tmp/merged.nom.lef def read iiitb_r2_4bit_bm.def &
 ```
 
+The sky130_vsdinv will be present in the netlist and .def file after placement 
 
+![](post_layout_def_macro.png)   
+
+![](post_layout_netlist_macro.png)
+
+Complete layout 
+
+![](images/Routing_magic.png)
+
+sky130_vsdinv in Layout view
+
+![](images/post_placement_sky130inv.png)
+
+The area report in magic
+
+![](images/area.png)
 
  ## Contributors 
  
