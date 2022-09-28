@@ -273,7 +273,7 @@ The area report in magic
  
  ### 1. Total Cells
  
- ![](images/Total_cells.png)
+ ![](images/Total_Cells.png)
  
  ```
  Total number of Cells = 112
@@ -294,8 +294,23 @@ The area report in magic
  Performance = 1/(clock period - slack) = 1/(10 - 7.14)ns = 349.650 Mhz
  ```
  
- ### 4.
+ ### 4. Flipflop to Cell Ratio
  
+ ![](images/Total_Flipflops.png)
+ 
+ ```
+ Flop Ratio = Ratio of total number of flip flops / Total number of cells present in the design = 24/112 = 0.2143
+ ```
+ ### 5. Power
+ 
+ ![](images/power.png)
+ 
+ ```
+ Internal Power  =  186uW  (70.3%)
+ Switching Power = 78.4uW  (29.7%)
+ Leakage Power   = 0.803nW (0.0%)
+ Total Power     =   264uW (100%)
+ ```
 
  ## Contributors 
  
