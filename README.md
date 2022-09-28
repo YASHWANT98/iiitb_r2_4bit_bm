@@ -267,7 +267,35 @@ sky130_vsdinv in Layout view
 
 The area report in magic
 
-![](images/area.png)
+![](images/Area.png)
+
+ ## Post Layout Result
+ 
+ ### 1. Total Cells
+ 
+ ![](images/Total_cells.png)
+ 
+ ```
+ Total number of Cells = 112
+ ```
+ ### 2. Area 
+ 
+ ![](images/Area.png)
+ 
+ ```
+ Area = 7966.123 um<sup>2</sup>
+ ```
+ 
+ ### 3.Performance
+ 
+ ![](images/STA_report.png)
+ 
+ ```
+ Performance = 1/(clock period - slack) = 1/(10 - 7.14)ns = 349.650 Mhz
+ ```
+ 
+ ### 4.
+ 
 
  ## Contributors 
  
