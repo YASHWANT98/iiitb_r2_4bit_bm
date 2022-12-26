@@ -1,31 +1,3 @@
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Codespaces
-Marketplace
-Explore
- 
-@YASHWANT98 
-DantuNandiniDevi
-/
-iiitb_freqdiv
-Public
-Code
-Issues
-Pull requests
-Actions
-Projects
-Security
-Insights
-iiitb_freqdiv/verilog_model/primitives.v
-@DantuNandiniDevi
-DantuNandiniDevi Add files via upload
-Latest commit 44dc879 on Jul 28
- History
- 1 contributor
-1680 lines (1430 sloc)  49.3 KB
-
 /**
  * Copyright 2020 The SkyWater PDK Authors
  *
